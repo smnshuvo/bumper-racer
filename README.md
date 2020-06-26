@@ -21,4 +21,5 @@ The 3d Model is downloaded from https://free3d.com/3d-model/bumper-car-v2--53829
 
 ## Download URL
 Note: This is not a complete game, but still you can give a try, if I feel like updating the rest someday, I will update it here as well.
-https://drive.google.com/file/d/1iE54ymPmKPUXvdrpERi_QQml8wb-XSDE/view?usp=sharing
+
+https://drive.google.com/drive/u/1/folders/1y-HP52yUcf0UuftACGi9V7FvHjS2V_R-
