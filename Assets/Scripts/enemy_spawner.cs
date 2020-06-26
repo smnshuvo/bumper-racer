@@ -38,7 +38,7 @@ public class enemy_spawner : MonoBehaviour
             
             // rotation of the object
             Quaternion rot = Quaternion.Euler(-90, 180, 0);
-            Instantiate (_enemy, spawnPosition + transform.TransformPoint(0,0,0), rot);
+            Instantiate (_enemy, spawnPosition + transform.TransformPoint(0,0,17), rot);
             yield return new WaitForSeconds(waitTime);
         }
     }

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 
 public class player_collision : MonoBehaviour
 {
+    public Text scoreBoard;
     // this script is used to get if the player has collided with the enemy cars
     
     // keep traces of player movement
@@ -15,6 +16,7 @@ public class player_collision : MonoBehaviour
                 Debug.Log("Game Over");
                 // stop moving the car right there
                 movement.enabled = false;
+                scoreBoard.text = "Game Over";
         }
     }
 }

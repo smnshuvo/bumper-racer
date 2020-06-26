@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class player_controller : MonoBehaviour{
 
     public Rigidbody rb;
     public static float forwardForce = 400f;
     public static float sideForce = 120f;
     public static float topForce = 550f;
+    public Text scoreText;
     // Start is called before the first frame update
     void Start(){
         
@@ -30,9 +31,15 @@ public class player_controller : MonoBehaviour{
         if (Input.GetKeyDown("space")){
             // should be added a jump feature that will help the car to jump
             // below code leads to problem, you have to hold the space key strongly
-            if(rb.position.y < 10)            
+            if(rb.position.y < 15)  // won't let you jump twice          
             rb.AddForce(0, topForce * Time.deltaTime,0, ForceMode.VelocityChange);
         }
+        // controller updates the score
+        updateScore();
     
+    }
+
+    void updateScore(){
+        scoreText.text = (Time.frameCount/10).ToString("D8");
     }
 }
