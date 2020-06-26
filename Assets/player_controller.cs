@@ -5,6 +5,7 @@ public class player_controller : MonoBehaviour{
     public Rigidbody rb;
     public static float forwardForce = 400f;
     public static float sideForce = 120f;
+    public static float topForce = 550f;
     // Start is called before the first frame update
     void Start(){
         
@@ -25,6 +26,12 @@ public class player_controller : MonoBehaviour{
         }
         if(Input.GetKey("a")){
             rb.AddForce(-sideForce * Time.deltaTime ,0,0, ForceMode.VelocityChange);
+        }
+        if (Input.GetKeyDown("space")){
+            // should be added a jump feature that will help the car to jump
+            // below code leads to problem, you have to hold the space key strongly
+            if(rb.position.y < 10)            
+            rb.AddForce(0, topForce * Time.deltaTime,0, ForceMode.VelocityChange);
         }
     
     }
