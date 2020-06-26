@@ -33,8 +33,10 @@ public class enemy_spawner : MonoBehaviour
         while(shouldSpawn){
             randomEnemy = Random.Range(0, 2);
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnArea.x, spawnArea.x),1,Random.Range(-spawnArea.z, spawnArea.z));
-            Instantiate (enemies[randomEnemy], spawnPosition + transform.TransformPoint(0,0,0), gameObject.transform.rotation);
-            enemies[randomEnemy].rigidbody.AddForce(0,0,forwardForce * Time.deltaTime);
+            GameObject _enemy = enemies[randomEnemy];
+            // rotation of the object
+            Quaternion rot = Quaternion.Euler(-90, 0, 0);
+            Instantiate (_enemy, spawnPosition + transform.TransformPoint(0,0,0), rot);
             yield return new WaitForSeconds(waitTime);
         }
     }
